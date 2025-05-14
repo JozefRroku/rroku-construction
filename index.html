@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Rroku Construction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Αρχική</a></li>
+        <li><a href="#services">Υπηρεσίες</a></li>
+        <li><a href="#contact">Επικοινωνία</a></li>
+        <li><a href="#quote">Ζήτηση Προσφοράς</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="content">
+        <div class="content-box">
+          <h1>Rroku Construction</h1>
+          <p>
+            Η Rroku Construction είναι μια κατασκευαστική εταιρεία με εμπειρία σε πολυκατοικίες, επαγγελματικούς χώρους και ανακαινίσεις. 
+            Δίνουμε έμφαση στην ποιότητα, την ασφάλεια και την καινοτομία.
+          </p>
+        </div>
+      </div>      
+  </section>
+
+  <section id="services">
+    <h2>Υπηρεσίες</h2>
+    <p>Αναλαμβάνουμε ανέγερση πολυκατοικιών, ανακαινίσεις, και κατασκευές επαγγελματικών χώρων.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Επικοινωνία</h2>
+    <p>
+      Μπορείτε να μας καλέσετε στο 
+      <a href="tel:+306932231626">+30 6932231626</a>
+      ή να μας στείλετε email στο 
+      <a href="mailto:zefrroku18@gmail.com">zefrroku18@gmail.com</a>.
+    </p>
+  </section>
+  
+
+  <section id="quote">
+    <h2>Ζήτηση Προσφοράς</h2>
+    <form action="https://formspree.io/f/manoaqel" method="POST">
+      <label>Ονοματεπώνυμο:<br>
+        <input type="text" name="Ονοματεπώνυμο" required>
+      </label><br><br>
+
+      <label>Τηλέφωνο Επικοινωνίας:<br>
+        <input type="tel" name="Τηλέφωνο" required>
+      </label><br><br>
+
+      <label>Διεύθυνση Έργου:<br>
+        <input type="text" name="Διεύθυνση Έργου" required>
+      </label><br><br>
+
+      <label>Είδος Ζήτησης:<br>
+        <select name="Είδος Ζήτησης" required>
+          <option value="">-- Επιλέξτε --</option>
+          <option value="Ανακαίνιση">Ανακαίνιση</option>
+          <option value="Ανέγερση">Ανέγερση</option>
+          <option value="Κατασκευή Κατοικίας">Κατασκευή Κατοικίας</option>
+          <option value="Άλλο">Άλλο</option>
+        </select>
+      </label><br><br>
+
+      <label>Παρατηρήσεις:<br>
+        <textarea name="Παρατηρήσεις" rows="5"></textarea>
+      </label><br><br>
+
+      <button type="submit">Αποστολή</button>
+    </form>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* Βασικές ρυθμίσεις */
+body, html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Σταθερό menu */
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(0,0,0,0.6);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px; /* Μικρότερο padding */
+        z-index: 1000;
+      }
+      
+  
+  header .logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px; /* Μικρότερο κενό μεταξύ των κουμπιών */
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hero section (εικόνα φόντου) */
+  .hero {
+  background-image: url("images/polikatikia.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start; /* <-- από center σε flex-start */
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  padding-top: 50px; /* Προσθέτει απόσταση από πάνω */
+}
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 20px;
+  }
+  
+  .content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 
+      -1px -1px 0 black,  
+       1px -1px 0 black,
+      -1px  1px 0 black,
+       1px  1px 0 black; /* Μαύρο περίγραμμα */
+  }
+  
+  .content p {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 
+      -1px -1px 0 black,  
+       1px -1px 0 black,
+      -1px  1px 0 black,
+       1px  1px 0 black;
+  }
+  .content-box {
+    background-color: rgba(0, 0, 0, 0.4); /* σκούρο γκρι διαφανές */
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  /* Γενικά section */
+  section {
+    padding: 100px 30px;
+    background-color: #f9f9f9;
+  }
+  
+  section:nth-child(even) {
+    background-color: #e9e9e9;
+  }
+  
+  section h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  section p {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Για τα anchor links ώστε να μην κρύβονται από το header */
+  section:target::before {
+    content: "";
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+  }
+  
+  /* Φόρμα προσφοράς */
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  form input,
+  form select,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  form textarea {
+    resize: vertical;
+  }
+  
+  form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  /* -------- Responsive σχεδιασμός -------- */
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      width: 100%;
+    }
+  
+    nav ul li a {
+      font-size: 18px;
+      display: block;
+      padding: 10px 0;
+    }
+  
+    .content h1 {
+      font-size: 32px;
+    }
+  
+    .content p {
+      font-size: 16px;
+    }
+  
+    section {
+      padding: 60px 20px;
+    }
+  
+    form {
+      padding: 15px;
+    }
+  }
+  
+  
