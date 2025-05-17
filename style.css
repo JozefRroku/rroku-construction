@@ -319,16 +319,32 @@ body, html {
 }
 
 .scroll-btn.left {
-  left: -25px;
+  left: -30px;
 }
 
 .scroll-btn.right {
-  right: -25px;
+  right: -30px;
 }
 
 .scroll-btn:hover {
   opacity: 1;
 }
+@media (max-width: 600px) {
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .scroll-btn.left {
+    left: 0;
+  }
+
+  .scroll-btn.right {
+    right: 0;
+  }
+}
+
 
 
 
