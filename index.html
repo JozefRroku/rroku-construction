@@ -9,8 +9,9 @@
 <body>
 
   <header>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
     <nav>
-      <ul>
+      <ul id="nav-menu">
         <li><a href="#home">Αρχική</a></li>
         <li><a href="#services">Υπηρεσίες</a></li>
         <li><a href="#contact">Επικοινωνία</a></li>
@@ -18,7 +19,15 @@
       </ul>
     </nav>
   </header>
-
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+  
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+  </script>
+  
   <section class="hero" id="home">
     <div class="content">
         <div class="content-box">
