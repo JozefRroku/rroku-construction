@@ -344,6 +344,12 @@ body, html {
     right: 0;
   }
 }
+/* Optional - κάνει την εικόνα του Lightbox να φτάνει όσο πιο full γίνεται */
+.lb-image {
+  max-width: 500vw !important;
+  max-height: 500vh !important;
+}
+
 
 
 
