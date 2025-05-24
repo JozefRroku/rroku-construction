@@ -349,6 +349,29 @@ body, html {
   max-width: 500vw !important;
   max-height: 500vh !important;
 }
+@media (max-width: 600px) {
+  .project-gallery {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .project-item {
+    width: 90%; /* μειώνουμε το πλάτος */
+    margin-bottom: 30px;
+  }
+
+  .scroll-btn {
+    display: none; /* κρύβουμε τα κουμπιά σε κινητά */
+  }
+
+  .project-item img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 
 
 
