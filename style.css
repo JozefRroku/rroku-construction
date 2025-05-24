@@ -351,24 +351,33 @@ body, html {
 }
 @media (max-width: 600px) {
   .project-gallery {
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px; /* 👉 Μεγαλύτερο κενό ανάμεσα στις εικόνες */
+    padding: 10px;
+    justify-items: center;
   }
 
   .project-item {
-    width: 90%; /* μειώνουμε το πλάτος */
-    margin-bottom: 30px;
-  }
-
-  .scroll-btn {
-    display: none; /* κρύβουμε τα κουμπιά σε κινητά */
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+    margin-bottom: 20px; /* 👉 Extra περιθώριο κάτω από κάθε κάρτα */
   }
 
   .project-item img {
-    border-radius: 10px;
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    border-radius: 10px;
+  }
+
+  .project-item p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .scroll-btn {
+    display: none;
   }
 }
 
