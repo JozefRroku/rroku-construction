@@ -45,30 +45,63 @@ body, html {
     text-decoration: underline;
   }
   
-  /* Hero section (εικόνα φόντου) */
   .hero {
-  background-image: url("images/polikatikia.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  align-items: flex-start; /* <-- από center σε flex-start */
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-  padding-top: 50px; /* Προσθέτει απόσταση από πάνω */
-}
+    background-image: url("images/Logo.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
   
-  .hero::before {
-    content: "";
+  .hero-overlay {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6); /* σκοτεινό overlay */
     z-index: 0;
   }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 20px;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  }
+  
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  }
+  
+  .hero-button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #0056b3;
+  }
+  
   
   .content {
     position: relative;
@@ -380,6 +413,301 @@ body, html {
     display: none;
   }
 }
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-float img {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover img {
+  transform: scale(1.1);
+}
+/* Κουμπί Dark Mode */
+.dark-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+/* Dark Mode συνολικά */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Κάνει όλα τα sections και κείμενα σκοτεινά */
+body.dark-mode section {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+body.dark-mode header {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+body.dark-mode nav ul li a {
+  color: white;
+}
+
+body.dark-mode nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Φόρμα */
+body.dark-mode form {
+  background-color: #2a2a2a;
+  color: white;
+}
+
+body.dark-mode form input,
+body.dark-mode form select,
+body.dark-mode form textarea {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+body.dark-mode form button {
+  background-color: #0066cc;
+}
+
+body.dark-mode form button:hover {
+  background-color: #004c99;
+}
+
+/* Gallery Cards */
+body.dark-mode .project-item {
+  background-color: #2b2b2b;
+  color: white;
+}
+
+/* Hero Section Overlay */
+body.dark-mode .hero::before {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .content h1,
+body.dark-mode .content p {
+  color: white;
+}
+/* Όλα τα βασικά κείμενα λευκά σε dark mode */
+body.dark-mode,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode label,
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  color: white !important;
+}
+
+/* Τα links ειδικά */
+body.dark-mode a {
+  color: #4dc3ff;
+}
+
+body.dark-mode a:hover {
+  color: #99e3ff;
+}
+body.dark-mode #projects {
+  background-color: #1e1e1e;
+}
+.menu-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dark-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  margin-right: 800px;
+  margin-top: -8px;
+}
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  background-color: #007BFF;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+.contact-item img {
+  width: 40px;
+  height: 40px;
+  filter: invert(1);
+}
+
+.contact-item h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: underline;
+  font-size: 16px;
+}
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service-item {
+  background-color: #007BFF;
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+.service-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+  filter: invert(1);
+}
+
+.service-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 15px;
+  color: white;
+}
+.about-section {
+  background-color: #f5f5f5;
+  padding: 80px 30px;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.about-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-text ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.about-text ul li::before {
+  content: "✔️ ";
+  margin-right: 6px;
+}
+.about-right ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 👈 Κεντράρισμα bullets */
+  gap: 12px;
+}
+
+.about-right ul li {
+  font-size: 17px;
+  color: #444;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 👈 Κεντράρισμα περιεχομένου */
+}
+
+.about-right ul li::before {
+  content: '✔';
+  color: #007BFF;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.hero,
+.hero h1,
+.hero p,
+.hero a {
+  color: white !important;
+}
+
+
+
+
+
 
 
 

@@ -7,19 +7,24 @@
   <link rel="stylesheet" href="style.css">
   <!-- Lightbox2 CSS -->
 <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <nav>
-      <ul id="nav-menu">
-        <li><a href="#home">Αρχική</a></li>
-        <li><a href="#services">Υπηρεσίες</a></li>
-        <li><a href="#contact">Επικοινωνία</a></li>
-        <li><a href="#quote">Ζήτηση Προσφοράς</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="menu-wrapper">
+      <div class="menu-toggle" id="menu-toggle">☰</div> <!-- Εμφανίζεται σε mobile -->
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="#home">Αρχική</a></li>
+          <li><a href="#about">Ποιοι Είμαστε</a></li>
+          <li><a href="#services">Υπηρεσίες</a></li>
+          <li><a href="#contact">Επικοινωνία</a></li>
+          <li><a href="#quote">Ζήτηση Προσφοράς</a></li>
+          <button id="darkModeToggle" class="dark-toggle">🌙</button>
+        </ul>
+      </nav>
+    </div>
+  </header>  
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.querySelector('nav ul');
@@ -38,21 +43,34 @@
     });
   </script>  
   <section class="hero" id="home">
-    <div class="content">
-        <div class="content-box">
-          <h1>Rroku Construction</h1>
-          <p>
-            Η Rroku Construction είναι μια κατασκευαστική εταιρεία με εμπειρία σε πολυκατοικίες, επαγγελματικούς χώρους και ανακαινίσεις. 
-            Δίνουμε έμφαση στην ποιότητα, την ασφάλεια και την καινοτομία.
-          </p>
-        </div>
-      </div>      
-  </section>
-  <section id="about">
-    <h2>Σχετικά με εμάς</h2>
-    <p>
-      Η Rroku Construction ιδρύθηκε με στόχο την παροχή αξιόπιστων και καινοτόμων λύσεων στον τομέα των κατασκευών. Με εμπειρία πολλών ετών και εξειδικευμένο προσωπικό, δημιουργούμε έργα υψηλής αισθητικής και αντοχής.
-    </p>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Rroku Construction</h1>
+      <p>
+        Εξειδικευόμαστε σε κατασκευές, ανακαινίσεις και έργα υψηλής ποιότητας.
+        Με εμπειρία, αξιοπιστία και καινοτομία – δημιουργούμε το μέλλον σας.
+      </p>
+      <a href="#projects" class="hero-button">Δείτε τα έργα μας</a>
+    </div>
+  </section>  
+  <section id="about" class="about-section" data-aos="fade-up">
+    <div class="about-wrapper">
+      <div class="about-left">
+      </div>
+      <div class="about-right">
+        <h2>Ποιοι Είμαστε</h2>
+        <p>
+          Στη <strong>Rroku Construction</strong> μετατρέπουμε το όραμά σας σε πραγματικότητα. 
+          Εξειδικευόμαστε σε ποιοτικές κατασκευές, με προσήλωση στη λεπτομέρεια και τις ανάγκες κάθε έργου.
+        </p>
+        <ul>
+          <li>📐 Σύγχρονες κατασκευές</li>
+          <li>🛠 Πλήρεις ανακαινίσεις</li>
+          <li>🏗 Οργάνωση & επίβλεψη έργων</li>
+          <li>💬 Συνεχής επικοινωνία</li>
+        </ul>
+      </div>
+    </div>
   </section>  
   <section id="projects">
     <h2>Τα έργα μας</h2>
@@ -64,8 +82,7 @@
             <img src="images/kthrio1.jpg" alt="Έργο 1">
           </a>
           <p>Ανακαίνιση διαμερίσματος στην Αθήνα</p>
-        </div>
-      
+        </div>     
         <div class="project-item">
           <a href="images/kthrio2.jpg" data-lightbox="projects" data-title="Κατασκευή πολυκατοικίας στο Περιστέρι">
             <img src="images/kthrio2.jpg" alt="Έργο 2">
@@ -79,26 +96,56 @@
           </a>
           <p>Κατασκευή πολυκατοικίας στο Περιστέρι</p>
         </div>
-      </div>
-      
+      </div>     
       <button class="scroll-btn right" id="scroll-right">▶</button>
     </div>    
   </section>
-  <section id="services">
+  <section id="services" data-aos="fade-up">
     <h2>Υπηρεσίες</h2>
-    <p>Αναλαμβάνουμε ανέγερση πολυκατοικιών, ανακαινίσεις, και κατασκευές επαγγελματικών χώρων.</p>
+    <div class="service-cards">
+      <div class="service-item">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/city-buildings.png" alt="Ανέγερση">
+        <h3>Ανέγερση Πολυκατοικιών</h3>
+        <p>Ολοκληρωμένες κατασκευές σύγχρονων πολυκατοικιών με αντοχή και αισθητική.</p>
+      </div>
+      <div class="service-item">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/maintenance.png" alt="Ανακαινίσεις">
+        <h3>Ανακαινίσεις</h3>
+        <p>Ανανεώνουμε και αναβαθμίζουμε κάθε χώρο – οικιακό ή επαγγελματικό.</p>
+      </div>
+      <div class="service-item">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/workspace.png" alt="Επαγγελματικοί χώροι">
+        <h3>Κατασκευή Επαγγελματικών Χώρων</h3>
+        <p>Εργονομία, λειτουργικότητα και στυλ για τον επαγγελματικό σας χώρο.</p>
+      </div>
+    </div>
   </section>
-
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Επικοινωνία</h2>
-    <p>
-      Μπορείτε να μας καλέσετε στο 
-      <a href="tel:+306932231626">+30 6932231626</a>
-      ή να μας στείλετε email στο 
-      <a href="mailto:zefrroku18@gmail.com">zefrroku18@gmail.com</a>.
-    </p>
+    <div class="contact-card">
+      <div class="contact-item">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Τηλέφωνο">
+        <div>
+          <h3>Τηλέφωνο</h3>
+          <a href="tel:+306932231626">+30 6932231626</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="Email">
+        <div>
+          <h3>Email</h3>
+          <a href="mailto:zefrroku18@gmail.com">zefrroku18@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
+        <div>
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/306932231626" target="_blank">Άμεσο μήνυμα</a>
+        </div>
+      </div>
+    </div>
   </section>
-  
   <section id="quote">
     <h2>Ζήτηση Προσφοράς</h2>
     <form action="https://formspree.io/f/manoaqel" method="POST">
@@ -123,19 +170,16 @@
           <option value="Άλλο">Άλλο</option>
         </select>
       </label><br><br>
-
       <label>Παρατηρήσεις:<br>
         <textarea name="Παρατηρήσεις" rows="5"></textarea>
       </label><br><br>
-
       <button type="submit">Αποστολή</button>
     </form>
   </section>
   <script>
     const scrollContainer = document.getElementById('project-gallery');
     const scrollLeftBtn = document.getElementById('scroll-left');
-    const scrollRightBtn = document.getElementById('scroll-right');
-  
+    const scrollRightBtn = document.getElementById('scroll-right'); 
     function updateButtons() {
       const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
       scrollLeftBtn.style.display = scrollContainer.scrollLeft > 0 ? "block" : "none";
@@ -155,5 +199,40 @@
   </script>   
   <!-- Lightbox2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+<div class="floating-buttons">
+  <a href="https://wa.me/306932231626" target="_blank" class="whatsapp-float">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
+<script>
+  const toggle = document.getElementById('darkModeToggle');
+
+  function updateIcon() {
+    if (document.body.classList.contains('dark-mode')) {
+      toggle.textContent = '☀️'; // light icon
+      toggle.title = 'Απενεργοποίηση Dark Mode';
+    } else {
+      toggle.textContent = '🌙'; // dark icon
+      toggle.title = 'Ενεργοποίηση Dark Mode';
+    }
+  }
+
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    updateIcon();
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('darkMode') === 'true';
+    if (saved) document.body.classList.add('dark-mode');
+    updateIcon(); // sync icon on load
+  });
+</script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>
