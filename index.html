@@ -15,16 +15,39 @@
       <div class="menu-toggle" id="menu-toggle">☰</div> <!-- Εμφανίζεται σε mobile -->
       <nav>
         <ul id="nav-menu">
-          <li><a href="#home">Αρχική</a></li>
-          <li><a href="#about">Ποιοι Είμαστε</a></li>
-          <li><a href="#services">Υπηρεσίες</a></li>
-          <li><a href="#contact">Επικοινωνία</a></li>
-          <li><a href="#quote">Ζήτηση Προσφοράς</a></li>
+          <li class="lang-el"><a href="#home">Αρχική</a></li>
+          <li class="lang-en" style="display:none;"><a href="#home">Home</a></li>
+  
+          <li class="lang-el"><a href="#about">Ποιοι Είμαστε</a></li>
+          <li class="lang-en" style="display:none;"><a href="#about">About Us</a></li>
+  
+          <li class="lang-el"><a href="#services">Υπηρεσίες</a></li>
+          <li class="lang-en" style="display:none;"><a href="#services">Services</a></li>
+  
+          <li class="lang-el"><a href="#contact">Επικοινωνία</a></li>
+          <li class="lang-en" style="display:none;"><a href="#contact">Contact</a></li>
+  
+          <li class="lang-el"><a href="#quote">Ζήτηση Προσφοράς</a></li>
+          <li class="lang-en" style="display:none;"><a href="#quote">Request Quote</a></li>
           <button id="darkModeToggle" class="dark-toggle">🌙</button>
+          
         </ul>
       </nav>
+      <button id="langToggle" class="lang-toggle" style="font-size: 14px;">EN</button>
     </div>
   </header>  
+  <script>
+    document.getElementById("langToggle").addEventListener("click", () => {
+      const el = document.querySelectorAll(".lang-el");
+      const en = document.querySelectorAll(".lang-en");
+      const isGreek = el[0].style.display !== "none";
+  
+      el.forEach(e => e.style.display = isGreek ? "none" : "block");
+      en.forEach(e => e.style.display = isGreek ? "block" : "none");
+  
+      document.getElementById("langToggle").textContent = isGreek ? "GR" : "EN";
+    });
+  </script>
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.querySelector('nav ul');
@@ -45,35 +68,51 @@
   <section class="hero" id="home">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
-      <h1>Rroku Construction</h1>
-      <p>
-        Εξειδικευόμαστε σε κατασκευές, ανακαινίσεις και έργα υψηλής ποιότητας.
-        Με εμπειρία, αξιοπιστία και καινοτομία – δημιουργούμε το μέλλον σας.
-      </p>
-      <a href="#projects" class="hero-button">Δείτε τα έργα μας</a>
-    </div>
+      <h1 class="lang-el">Rroku Construction</h1>
+    <h1 class="lang-en" style="display:none;">Rroku Construction</h1>
+
+    <p class="lang-el">Εξειδικευόμαστε σε κατασκευές, ανακαινίσεις και έργα υψηλής ποιότητας. Με εμπειρία, αξιοπιστία και καινοτομία – δημιουργούμε το μέλλον σας.</p>
+    <p class="lang-en" style="display:none;">We specialize in constructions, renovations, and high-quality projects. With experience, reliability, and innovation – we build your future.</p>
+
+    <a href="#projects" class="hero-button lang-el">Δείτε τα έργα μας</a>
+    <a href="#projects" class="hero-button lang-en" style="display:none;">View Our Projects</a>
   </section>  
   <section id="about" class="about-section" data-aos="fade-up">
     <div class="about-wrapper">
       <div class="about-left">
       </div>
       <div class="about-right">
-        <h2>Ποιοι Είμαστε</h2>
-        <p>
-          Στη <strong>Rroku Construction</strong> μετατρέπουμε το όραμά σας σε πραγματικότητα. 
-          Εξειδικευόμαστε σε ποιοτικές κατασκευές, με προσήλωση στη λεπτομέρεια και τις ανάγκες κάθε έργου.
-        </p>
-        <ul>
-          <li>📐 Σύγχρονες κατασκευές</li>
-          <li>🛠 Πλήρεις ανακαινίσεις</li>
-          <li>🏗 Οργάνωση & επίβλεψη έργων</li>
-          <li>💬 Συνεχής επικοινωνία</li>
+        <h2 class="lang-el">Ποιοι Είμαστε</h2>
+      <h2 class="lang-en" style="display:none;">About Us</h2>
+
+      <p class="lang-el">
+        Στη <strong>Rroku Construction</strong> μετατρέπουμε το όραμά σας σε πραγματικότητα. 
+        Εξειδικευόμαστε σε ποιοτικές κατασκευές, με προσήλωση στη λεπτομέρεια και τις ανάγκες κάθε έργου.
+      </p>
+      <p class="lang-en" style="display:none;">
+        At <strong>Rroku Construction</strong> we turn your vision into reality.
+        We specialize in quality construction with attention to detail and every project's needs.
+      </p>
+
+      <ul>
+        <li class="lang-el">📐 Σύγχρονες κατασκευές</li>
+        <li class="lang-en" style="display:none;">📐 Modern constructions</li>
+
+        <li class="lang-el">🛠 Πλήρεις ανακαινίσεις</li>
+        <li class="lang-en" style="display:none;">🛠 Complete renovations</li>
+
+        <li class="lang-el">🏗 Οργάνωση & επίβλεψη έργων</li>
+        <li class="lang-en" style="display:none;">🏗 Project organization & supervision</li>
+
+        <li class="lang-el">💬 Συνεχής επικοινωνία</li>
+        <li class="lang-en" style="display:none;">💬 Continuous communication</li>
         </ul>
       </div>
     </div>
   </section>  
   <section id="projects">
-    <h2>Τα έργα μας</h2>
+    <h2 class="lang-el">Τα έργα μας</h2>
+    <h2 class="lang-en" style="display:none;">Our Projects</h2>
     <div class="project-container">
       <button class="scroll-btn left" id="scroll-left">◀</button>
       <div class="project-gallery" id="project-gallery">
@@ -81,87 +120,111 @@
           <a href="images/kthrio1.jpg" data-lightbox="projects" data-title="Ανακαίνιση διαμερίσματος στην Αθήνα">
             <img src="images/kthrio1.jpg" alt="Έργο 1">
           </a>
-          <p>Ανακαίνιση διαμερίσματος στην Αθήνα</p>
+          <p class="lang-el">Ανακαίνιση διαμερίσματος στην Αθήνα</p>
+          <p class="lang-en" style="display:none;">Renovation of an apartment in Athens</p>
         </div>     
         <div class="project-item">
           <a href="images/kthrio2.jpg" data-lightbox="projects" data-title="Κατασκευή πολυκατοικίας στο Περιστέρι">
             <img src="images/kthrio2.jpg" alt="Έργο 2">
           </a>
-          <p>Κατασκευή πολυκατοικίας στο Περιστέρι</p>
+          <p class="lang-el">Κατασκευή πολυκατοικίας στο Περιστέρι</p>
+          <p class="lang-en" style="display:none;">Construction of an apartment building in Peristeri</p>
         </div>
       
         <div class="project-item">
           <a href="images/kthrio3.jpg" data-lightbox="projects" data-title="Κατασκευή πολυκατοικίας στο Περιστέρι">
             <img src="images/kthrio3.jpg" alt="Έργο 3">
           </a>
-          <p>Κατασκευή πολυκατοικίας στο Περιστέρι</p>
+          <p class="lang-el">Κατασκευή πολυκατοικίας στο Περιστέρι</p>
+          <p class="lang-en" style="display:none;">Construction of an apartment building in Peristeri</p>
         </div>
-      </div>     
+      </div>          
       <button class="scroll-btn right" id="scroll-right">▶</button>
     </div>    
   </section>
   <section id="services" data-aos="fade-up">
-    <h2>Υπηρεσίες</h2>
+    <h2 class="lang-el">Υπηρεσίες</h2>
+    <h2 class="lang-en" style="display:none;">Services</h2>
     <div class="service-cards">
       <div class="service-item">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/city-buildings.png" alt="Ανέγερση">
-        <h3>Ανέγερση Πολυκατοικιών</h3>
-        <p>Ολοκληρωμένες κατασκευές σύγχρονων πολυκατοικιών με αντοχή και αισθητική.</p>
+        <h3 class="lang-el">Ανέγερση Πολυκατοικιών</h3>
+        <h3 class="lang-en" style="display:none;">Apartment Building Construction</h3>
+        <p class="lang-el">Ολοκληρωμένες κατασκευές σύγχρονων πολυκατοικιών με αντοχή και αισθητική.</p>
+        <p class="lang-en" style="display:none;">Complete construction of modern apartment buildings with durability and aesthetics.</p>
       </div>
       <div class="service-item">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/maintenance.png" alt="Ανακαινίσεις">
-        <h3>Ανακαινίσεις</h3>
-        <p>Ανανεώνουμε και αναβαθμίζουμε κάθε χώρο – οικιακό ή επαγγελματικό.</p>
+        <h3 class="lang-el">Ανακαινίσεις</h3>
+        <h3 class="lang-en" style="display:none;">Renovations</h3>
+        <p class="lang-el">Ανανεώνουμε και αναβαθμίζουμε κάθε χώρο – οικιακό ή επαγγελματικό.</p>
+        <p class="lang-en" style="display:none;">We renew and upgrade every space – residential or commercial.</p>
       </div>
       <div class="service-item">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/workspace.png" alt="Επαγγελματικοί χώροι">
-        <h3>Κατασκευή Επαγγελματικών Χώρων</h3>
-        <p>Εργονομία, λειτουργικότητα και στυλ για τον επαγγελματικό σας χώρο.</p>
+        <h3 class="lang-el">Κατασκευή Επαγγελματικών Χώρων</h3>
+        <h3 class="lang-en" style="display:none;">Construction of Commercial Spaces</h3>
+        <p class="lang-el">Εργονομία, λειτουργικότητα και στυλ για τον επαγγελματικό σας χώρο.</p>
+        <p class="lang-en" style="display:none;">Ergonomics, functionality, and style for your business space.</p>
       </div>
     </div>
   </section>
   <section id="contact" data-aos="fade-up">
-    <h2>Επικοινωνία</h2>
-    <div class="contact-card">
-      <div class="contact-item">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Τηλέφωνο">
-        <div>
-          <h3>Τηλέφωνο</h3>
-          <a href="tel:+306932231626">+30 6932231626</a>
-        </div>
+    <h2 class="lang-el">Επικοινωνία</h2>
+  <h2 class="lang-en" style="display:none;">Contact</h2>
+  <div class="contact-card">
+    <div class="contact-item">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Τηλέφωνο">
+      <div>
+        <h3 class="lang-el">Τηλέφωνο</h3>
+        <h3 class="lang-en" style="display:none;">Phone</h3>
+        <a href="tel:+306932231626">+30 6932231626</a>
       </div>
-      <div class="contact-item">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="Email">
-        <div>
-          <h3>Email</h3>
-          <a href="mailto:zefrroku18@gmail.com">zefrroku18@gmail.com</a>
-        </div>
+    </div>
+    <div class="contact-item">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="Email">
+      <div>
+        <h3>Email</h3>
+        <a href="mailto:zefrroku18@gmail.com">zefrroku18@gmail.com</a>
       </div>
-      <div class="contact-item">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
-        <div>
-          <h3>WhatsApp</h3>
-          <a href="https://wa.me/306932231626" target="_blank">Άμεσο μήνυμα</a>
-        </div>
+    </div>
+    <div class="contact-item">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
+      <div>
+        <h3 class="lang-el">WhatsApp</h3>
+        <h3 class="lang-en" style="display:none;">WhatsApp</h3>
+        <a href="https://wa.me/306932231626" target="_blank" class="lang-el">Άμεσο μήνυμα</a>
+        <a href="https://wa.me/306932231626" target="_blank" class="lang-en" style="display:none;">Send a message</a>
+      </div>
       </div>
     </div>
   </section>
   <section id="quote">
-    <h2>Ζήτηση Προσφοράς</h2>
+    <h2 class="lang-el">Ζήτηση Προσφοράς</h2>
+    <h2 class="lang-en" style="display:none;">Request a Quote</h2>
     <form action="https://formspree.io/f/manoaqel" method="POST">
-      <label>Ονοματεπώνυμο:<br>
+      <label class="lang-el">Ονοματεπώνυμο:<br>
+        <input type="text" name="Ονοματεπώνυμο" required>
+      </label>
+      <label class="lang-en" style="display:none;">Full Name:<br>
         <input type="text" name="Ονοματεπώνυμο" required>
       </label><br><br>
-
-      <label>Τηλέφωνο Επικοινωνίας:<br>
+  
+      <label class="lang-el">Τηλέφωνο Επικοινωνίας:<br>
+        <input type="tel" name="Τηλέφωνο" required>
+      </label>
+      <label class="lang-en" style="display:none;">Phone Number:<br>
         <input type="tel" name="Τηλέφωνο" required>
       </label><br><br>
-
-      <label>Διεύθυνση Έργου:<br>
+  
+      <label class="lang-el">Διεύθυνση Έργου:<br>
+        <input type="text" name="Διεύθυνση Έργου" required>
+      </label>
+      <label class="lang-en" style="display:none;">Project Address:<br>
         <input type="text" name="Διεύθυνση Έργου" required>
       </label><br><br>
-
-      <label>Είδος Ζήτησης:<br>
+  
+      <label class="lang-el">Είδος Ζήτησης:<br>
         <select name="Είδος Ζήτησης" required>
           <option value="">-- Επιλέξτε --</option>
           <option value="Ανακαίνιση">Ανακαίνιση</option>
@@ -169,11 +232,26 @@
           <option value="Κατασκευή Κατοικίας">Κατασκευή Κατοικίας</option>
           <option value="Άλλο">Άλλο</option>
         </select>
+      </label>
+      <label class="lang-en" style="display:none;">Request Type:<br>
+        <select name="Είδος Ζήτησης" required>
+          <option value="">-- Select --</option>
+          <option value="Renovation">Renovation</option>
+          <option value="Construction">Construction</option>
+          <option value="House Building">House Building</option>
+          <option value="Other">Other</option>
+        </select>
       </label><br><br>
-      <label>Παρατηρήσεις:<br>
+  
+      <label class="lang-el">Παρατηρήσεις:<br>
+        <textarea name="Παρατηρήσεις" rows="5"></textarea>
+      </label>
+      <label class="lang-en" style="display:none;">Notes:<br>
         <textarea name="Παρατηρήσεις" rows="5"></textarea>
       </label><br><br>
-      <button type="submit">Αποστολή</button>
+  
+      <button type="submit" class="lang-el">Αποστολή</button>
+      <button type="submit" class="lang-en" style="display:none;">Send</button>
     </form>
   </section>
   <script>

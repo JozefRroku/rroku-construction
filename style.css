@@ -545,6 +545,15 @@ body.dark-mode #projects {
   margin-right: 800px;
   margin-top: -8px;
 }
+.lang-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  margin-right: 1000px;
+  margin-top: -8px;
+}
 .contact-card {
   display: flex;
   flex-wrap: wrap;
