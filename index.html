@@ -30,12 +30,26 @@
           <li class="lang-el"><a href="#quote">Ζήτηση Προσφοράς</a></li>
           <li class="lang-en" style="display:none;"><a href="#quote">Request Quote</a></li>
           <button id="darkModeToggle" class="dark-toggle">🌙</button>
-          
+          <button id="searchToggle" class="search-toggle" title="Αναζήτηση">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg>
+</button>
+
         </ul>
       </nav>
       <button id="langToggle" class="lang-toggle" style="font-size: 14px;">EN</button>
     </div>
   </header>  
+<!-- Overlay στο τέλος του body -->
+<div id="searchOverlay" class="search-overlay">
+  <div class="search-box">
+    <input type="text" id="overlaySearchInput" placeholder="Αναζήτηση..." autocomplete="off" />
+    <ul id="suggestionsList" class="suggestions"></ul>
+    <button id="searchClose">✖</button>
+  </div>
+</div>
   <script>
     document.getElementById("langToggle").addEventListener("click", () => {
       const el = document.querySelectorAll(".lang-el");
@@ -109,7 +123,27 @@
         </ul>
       </div>
     </div>
-  </section>  
+  <section id="stats" class="stats-section" data-aos="fade-up">
+  <h2 class="lang-el">Τα Στατιστικά μας</h2>
+  <h2 class="lang-en" style="display:none;">Our Stats</h2>
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-number" data-target="250">0</div>
+      <div class="stat-label lang-el">Ολοκληρωμένα Έργα</div>
+      <div class="stat-label lang-en" style="display:none;">Projects Completed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" data-target="10">0</div>
+      <div class="stat-label lang-el">Εξειδικευμένες Λύσεις</div>
+      <div class="stat-label lang-en" style="display:none;">Bespoke Solutions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" data-target="25">0</div>
+      <div class="stat-label lang-el">Άτομα στην Ομάδα</div>
+      <div class="stat-label lang-en" style="display:none;">Team Members</div>
+    </div>
+  </div>
+</section>
   <section id="projects">
     <h2 class="lang-el">Τα έργα μας</h2>
     <h2 class="lang-en" style="display:none;">Our Projects</h2>
@@ -169,6 +203,32 @@
       </div>
     </div>
   </section>
+  <section id="certifications" data-aos="fade-up">
+  <h2 class="lang-el">Πιστοποιήσεις & Πλεονεκτήματα</h2>
+  <h2 class="lang-en" style="display:none;">Certifications & Advantages</h2>
+  <div class="badge-container">
+    <div class="badge-item">
+      <span class="badge-icon">🏆</span>
+      <p class="lang-el">ISO 9001:2015 - Ποιότητα σε κάθε έργο</p>
+      <p class="lang-en" style="display:none;">ISO 9001:2015 - Quality in every project</p>
+    </div>
+    <div class="badge-item">
+      <span class="badge-icon">🔧</span>
+      <p class="lang-el">Συνεργασία με πιστοποιημένους μηχανικούς</p>
+      <p class="lang-en" style="display:none;">Cooperation with certified engineers</p>
+    </div>
+    <div class="badge-item">
+      <span class="badge-icon">🌍</span>
+      <p class="lang-el">Οικολογικά υλικά & βιώσιμες λύσεις</p>
+      <p class="lang-en" style="display:none;">Eco-friendly materials & sustainable solutions</p>
+    </div>
+    <div class="badge-item">
+      <span class="badge-icon">⏱</span>
+      <p class="lang-el">Παράδοση εντός χρονοδιαγράμματος</p>
+      <p class="lang-en" style="display:none;">On-time project delivery</p>
+    </div>
+  </div>
+</section>
   <section id="contact" data-aos="fade-up">
     <h2 class="lang-el">Επικοινωνία</h2>
   <h2 class="lang-en" style="display:none;">Contact</h2>
@@ -311,6 +371,148 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init();
+</script>
+<script>
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+  function animateCountUp(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const stat = entry.target;
+        const target = +stat.getAttribute('data-target');
+        let count = 0;
+        const step = Math.ceil(target / 100);
+        const interval = setInterval(() => {
+          count += step;
+          if (count >= target) {
+            stat.innerText = target;
+            clearInterval(interval);
+          } else {
+            stat.innerText = count;
+          }
+        }, 20);
+        observer.unobserve(stat); // μόνο μία φορά
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(animateCountUp, {
+    threshold: 0.6
+  });
+
+  statNumbers.forEach(stat => observer.observe(stat));
+</script>
+<script>
+  const searchToggle = document.getElementById('searchToggle');
+  const searchOverlay = document.getElementById('searchOverlay');
+  const searchClose = document.getElementById('searchClose');
+  const searchInput = document.getElementById('overlaySearchInput');
+
+  searchToggle.addEventListener('click', () => {
+    searchOverlay.classList.add('active');
+    setTimeout(() => searchInput.focus(), 100);
+  });
+
+  searchClose.addEventListener('click', () => {
+    searchOverlay.classList.remove('active');
+    searchInput.value = '';
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      searchOverlay.classList.remove('active');
+      searchInput.value = '';
+    }
+  });
+</script>
+<script>
+  // 🔍 Όροι προς πρόταση (μπορείς να προσθέσεις και EN/GR)
+  const suggestions = [
+    "Ανακαίνιση",
+    "Πολυκατοικία",
+    "Επαγγελματικός Χώρος",
+    "Ολοκληρωμένα Έργα",
+    "Ομάδα",
+    "Αθήνα",
+    "Περιστέρι",
+    "Renovation",
+    "Apartment",
+    "Commercial",
+    "Team",
+    "Projects"
+  ];
+  // 🔍 Εμφάνιση προτάσεων καθώς πληκτρολογείς
+  searchInput.addEventListener('input', () => {
+    const input = searchInput.value.trim().toLowerCase();
+    suggestionsList.innerHTML = '';
+
+    if (input.length === 0) return;
+
+    const filtered = suggestions.filter(term =>
+      term.toLowerCase().includes(input)
+    );
+
+    filtered.forEach(term => {
+      const li = document.createElement('li');
+      li.textContent = term;
+      li.addEventListener('click', () => performSearch(term));
+      suggestionsList.appendChild(li);
+    });
+  });
+
+  // 🔍 Enter για εκτέλεση αναζήτησης
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      performSearch(searchInput.value.trim());
+    }
+  });
+
+  // 🔍 Εμφάνιση / Απόκρυψη overlay
+  searchToggle.addEventListener('click', () => {
+    searchOverlay.classList.add('active');
+    setTimeout(() => searchInput.focus(), 100);
+  });
+
+  searchClose.addEventListener('click', closeSearchOverlay);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeSearchOverlay();
+    }
+  });
+
+  // 🔍 Εκτέλεση της αναζήτησης
+  function performSearch(query) {
+  if (!query) return;
+
+  const lower = query.toLowerCase();
+  let found = false;
+
+  const elements = document.querySelectorAll('.project-item, .service-item, section');
+
+  for (let el of elements) {
+    const text = el.innerText.toLowerCase();
+    if (text.includes(lower)) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    alert('Δεν βρέθηκαν αποτελέσματα.');
+  }
+
+  closeSearchOverlay();
+}
+
+  // 🔄 Κλείσιμο και καθαρισμός
+  function closeSearchOverlay() {
+    searchOverlay.classList.remove('active');
+    searchInput.value = '';
+    suggestionsList.innerHTML = '';
+  }
 </script>
 </body>
 </html>

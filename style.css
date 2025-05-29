@@ -89,19 +89,24 @@ body, html {
   
   .hero-button {
     display: inline-block;
-    background-color: #007BFF;
+    background-color: #2a2a2a;
     color: white;
+    width: 200px;
     padding: 12px 25px;
     font-size: 16px;
     border-radius: 6px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+      
   }
-  
+  /* Κέντρο μέσα στο hero-content */
+.hero-content {
+  text-align: center;
+  width: 100%;
+}
   .hero-button:hover {
-    background-color: #0056b3;
+    background-color: #433c3c;
   }
-  
   
   .content {
     position: relative;
@@ -563,7 +568,7 @@ body.dark-mode #projects {
 }
 
 .contact-item {
-  background-color: #007BFF;
+  background-color: #2a2a2a;
   color: white;
   padding: 20px;
   border-radius: 12px;
@@ -582,7 +587,7 @@ body.dark-mode #projects {
 .contact-item img {
   width: 40px;
   height: 40px;
-  filter: invert(1);
+  object-fit: contain;
 }
 
 .contact-item h3 {
@@ -605,7 +610,7 @@ body.dark-mode #projects {
 }
 
 .service-item {
-  background-color: #007BFF;
+  background-color: #2a2a2a;
   color: white;
   padding: 25px;
   border-radius: 12px;
@@ -623,7 +628,7 @@ body.dark-mode #projects {
   width: 40px;
   height: 40px;
   margin-bottom: 15px;
-  filter: invert(1);
+  object-fit: contain;
 }
 
 .service-item h3 {
@@ -673,7 +678,7 @@ body.dark-mode #projects {
 .about-text ul li {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #007BFF;
+  color: #2a2a2a;
   font-weight: bold;
 }
 
@@ -712,6 +717,186 @@ body.dark-mode #projects {
 .hero a {
   color: white !important;
 }
+#certifications {
+  background-color: #ffffff;
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.badge-item {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.badge-item:hover {
+  transform: translateY(-5px);
+}
+
+.badge-icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.badge-item p {
+  font-size: 16px;
+  margin: 0;
+  color: white !important;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+body.dark-mode #certifications {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .badge-item {
+  background-color: #2a2a2a;
+  color: white;
+}
+.stats-section {
+  padding: 80px 30px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.stat-card {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.stat-label {
+  font-size: 18px;
+  color: white;
+}
+
+body.dark-mode #stats {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .stat-card {
+  background-color: #2a2a2a;
+  color: white;
+}
+.search-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.97);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.search-overlay.active {
+  display: flex;
+}
+
+.search-box {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 20px 60px 20px 20px;
+  font-size: 22px;
+  border: none;
+  border-bottom: 1px solid #888;
+  background: transparent;
+  color: white;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: #aaa;
+}
+
+#searchClose {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+.suggestions {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestions li {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #fff;
+  border-bottom: 1px solid #333;
+}
+
+.suggestions li:hover {
+  background-color: #333;
+}
+
+
+
+
 
 
 
